@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directing</title>
+    <link href="../dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-black">
+    <div class="min-w-full max-h-[1/10] z-20 bg-blue-800 flex flex-row justify-between p-3">
+        <button  id="hammenu" 
+            class="flex flex-col justify-between place-self-center w-8 h-6 transform transition-all duration-300 m-0 p-0">
+                <span class="block w-full h-0.5 p-0.5 bg-white transition-all duration-500" id="bar1"></span>
+                <span class="block w-full h-0.5 p-0.5 bg-white transition-all duration-500" id="bar2"></span>
+                <span class="block w-full h-0.5 p-0.5 bg-white transition-all duration-500" id="bar3"></span>
+        </button>
+        <div class="">
+            <h1 class="text-xl md:text-3xl lg:text-4xl text-slate-300 m-0 p-0">Arekhandia Gabriel</h1>
+        </div>
+        <button id="hammenuII" 
+            class="flex flex-col justify-between place-self-center w-2 h-6 transform transition-all duration-300 m-0 p-0">
+                <span class="block w-full h-1.5 p-0.5 bg-white transition-all duration-500" id="point1"></span>
+                <span class="block w-full h-1.5 p-0.5 bg-white transition-all duration-500" id="point2"></span>
+                <span class="block w-full h-1.5 p-0.5 bg-white transition-all duration-500" id="point3"></span>
+        </button>
+    </div>
+    <div id="menu" class="max-w-full h-fit flex flex-col space-y-3 md:flex-row md:justify-evenly md:space-y-0 m-2 bg/black/70">
+        <a href="./index.html"><h1 class="text-white text-center">Home</h1></a>
+        <a href="./styling.html"><h1 class="text-white text-center">Stylist</h1></a>
+        <a href="./modeling.html"><h1 class="text-white text-center">Model</h1></a>
+        <a href="./directing.html"><h1 class="text-white text-center">Creative Director</h1></a>
+        <a href="./photography.html"><h1 class="text-white text-center">Mobile Photographer</h1></a>
+    </div>
+
+        <div class="max-w-full m-5 p-5 flex flex-col space-y-5">
+        <h1 class="text-center text-white font-bold text-4xl md:text-5xl m-5">
+            Creative Directing
+        </h1>
+        <p class="text-slate-200 font-serif text-lg text-center">This is when I use visual lensing to bring forth Art with a bit of <strong><i>Je ne sais quoi</i></strong>.</p>
+        <p class="text-slate-200 font-serif text-lg text-center">It is the process of bringing different creatives in order to produce maximum creative output.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 m-10">
+            <div class="min-w-full rounded-4xl justify-center items-center justify-items-center space-x-auto hover:scale-115 transition-transform duration-300 ease-in-out">
+                <img src="../public/pics/IMG-20251108-WA0156.jpg" class="h-64 md:72 rounded-4xl hover:scale-125"/>
+                <div class="relative flex -top-64 left-0 w-full h-full inset-0 bg-gradient-to-t from-black/60 to-transparent px-5 mx-5">
+                    <h1 class="absolute bottom-10 left-20 text-white text-2xl text-center font-bold w-2/3"></h1>
+                </div>
+            </div> 
+            <!-- Styled By Me -->
+            <div class="min-w-full rounded-4xl justify-center items-center justify-items-center space-x-auto hover:scale-115 transition-transform duration-300 ease-in-out">
+                <img src="../public/pics/IMG-20251108-WA0154.jpg" class="h-64 md:72 rounded-4xl hover:scale-125"/>
+                <div class="relative flex -top-64 left-0 w-full h-full inset-0 bg-gradient-to-t from-black/60 to-transparent px-5 mx-5">
+                    <h1 class="absolute bottom-10 left-20 text-white text-2xl text-center font-bold w-2/3"></h1>
+                </div>
+            </div>
+            <div class="min-w-full rounded-4xl justify-center items-center justify-items-center space-x-auto hover:scale-115 transition-transform duration-300 ease-in-out">
+                <img src="../public/pics/IMG-20251108-WA0155.jpg" class="h-64 md:72 rounded-4xl hover:scale-125"/>
+                <div class="relative flex -top-64 left-0 w-full h-full inset-0 bg-gradient-to-t from-black/60 to-transparent px-5 mx-5">
+                    <h1 class="absolute bottom-10 left-20 text-white text-2xl text-center font-bold w-2/3"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-full h-10 bg-linear-to-t from-slate-600 to-slate-950 m-0 p-5">
+
+    </div>
+
+    <script>
+        const ham = document.getElementById("hammenu");
+        const ham2 = document.getElementById("hammenuII");
+
+        // for the menu that will pop up
+        const menu = document.getElementById("menu");
+        const strok = [];
+        for(var i = 1; i<4; i++){
+            strok.push(document.getElementById(`bar${i}`));
+        }
+        menu.classList.add("hidden");
+
+        ham2.addEventListener("click", ()=>{
+            // menu.classList.toggle('hidden');
+        })
+
+        ham.addEventListener('click', ()=>{
+            strok[0].classList.toggle("rotate-45");
+            strok[1].classList.toggle("-rotate-45");
+            strok[0].classList.toggle("translate-y-2.5");
+            strok[1].classList.toggle("bg-brand-red");
+            strok[2].classList.toggle("opacity-0");
+            strok[0].classList.toggle("bg-slate-900");
+            strok[1].classList.toggle("bg-slate-900");
+            menu.classList.toggle('hidden');
+
+            console.log(menu.attributes);
+        })
+
+    </script>
+</body>
+</html>
